@@ -77,7 +77,7 @@ Clicking into a Stack will show the AWS resources, and optionally a link to the 
 
         # bucket to grab testset data from, this can be changed to 
         # a different bucket that has data if desired
-        BUCKET="n25-testset"
+        BUCKET="temp-bucket"
 
         # tags to filter on, add new tags with comma ',' seperation
         TAGS=["stack-finder"]
@@ -85,15 +85,13 @@ Clicking into a Stack will show the AWS resources, and optionally a link to the 
         # group id or id's that you would like to filter on
         # these can be found at: https://portal.azure.com
         GROUP_ID=[
-            "6244b1cd-56a0-4f32-b192-9f418cf7239f", # panda-viking group
-            "0ba160f8-742c-4ec2-8d5a-60df11b66d95"  # ardis adfs group
+            "12345678-abcd-1234-abcd-123456789abc"
         ]
 
         # provide users that you would like to add
         GROUP=[
-            "henry.macias@pnnl.gov",
-            "bryan.gerber@pnnl.gov",
-            "juan.barajas@pnnl.gov"
+            "first.last@domain.com",
+            "first.last@domain.com"
         ]
         ```
 
@@ -178,11 +176,11 @@ Clicking into a Stack will show the AWS resources, and optionally a link to the 
             #! /usr/bin/env bash
             
             export TESTING=1                                    # let the application know we are testing
-            export STACK="rpm8-n25-webservice-test"             # the default stack I am using
-            export BUCKET="n25-rpm8-incoming"                   # bucket the test stack is using
-            export WEBSERVICE_NAME="rpm8-n25-webservice-test"   # webservice name on AWS
-            export CLUSTER="ardis-n25-dc"                       # cluster the webservice is on
-            export LOG_GROUP="/ecs/rpm8-n25-webservice-test"    # log group the webservice writes to
+            export STACK="aws-stack"                            # the default stack I am using
+            export BUCKET="temp-bucket"                         # bucket the test stack is using
+            export WEBSERVICE_NAME="aws-stack"                  # webservice name on AWS
+            export CLUSTER="aws-cluster"                        # cluster the webservice is on
+            export LOG_GROUP="/ecs/aws-stack"                   # log group the webservice writes to
 
             pytest -v
             ```

@@ -3,11 +3,11 @@ Python Flask web application used to easily access resources created with AWS Cl
 
 Stacks tagged with "stack-finder" or other customizable tag will show in the main UI:
 
-![Stack list](https://stash.pnnl.gov/users/maci346/repos/stack_finder/raw/img/stack-list.png)
+![Stack list](https://github.com/pnnl/StackFinder/blob/master/img/stack-list.png)
 
 Clicking into a Stack will show the AWS resources, and optionally a link to the build (Jenkins, Bamboo, TravisCI) that created the stack. Making it super easy for teams to get to Cloudwatch logs, debugging endpoints, and tracing back to the source code for a running application.
 
-![Stack Detail View](https://stash.pnnl.gov/users/maci346/repos/stack_finder/raw/img/stack-view.png)
+![Stack Detail View](https://github.com/pnnl/StackFinder/blob/master/img/stack-view.png)
 
 
 * ### Endpoints with UI

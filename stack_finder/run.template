@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+export AWS_DEFAULT_REGION=""
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export TESTING=1
+
+
+
+python test.py

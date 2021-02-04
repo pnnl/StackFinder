@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+export TESTING=1
+export STACK=""
+export BUCKET=""
+export WEBSERVICE_NAME=""
+export CLUSTER=""
+export LOG_GROUP=""
+
+pytest -v

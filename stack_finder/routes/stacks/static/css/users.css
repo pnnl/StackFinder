@@ -1,0 +1,91 @@
+header {
+    max-width: 100%;
+}
+
+h1 {
+    max-width: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px 5px 5px 5px;
+}
+
+.body {
+    max-width: 100%;
+    border-radius: 8px;
+    background-color: lightgray;
+    padding: 10px 10px;
+}
+
+td {
+    width: 80%;
+    text-align: center;
+    padding: 2.5px 10px;
+    border-bottom: 1px solid black;
+}
+
+.user-table {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.user-table {
+    width: 80%;
+    padding: 5px 5px 5px 5px;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.add-button {
+    width: 30%;
+}
+
+.logout-td {
+    width: 0%;
+    border-bottom: hidden;
+}
+
+.buttonsTable {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.table-buttons:hover, .a-href:hover {
+    background-color: darkgrey;
+}
+
+button, .value {
+    padding: 15px 32px;
+    border: none;
+    border-radius:8px;
+    font: 13px Arial;
+}
+
+.buttons-table-div {
+    width: 80%;
+    margin: auto;
+    padding: 25px 25px;
+}
+
+.a-href {
+    font: 13px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 8px;
+    display: inline-block;
+    width: 78%;
+}
+
+.a-logout {
+    width: 55%;
+    padding: 15px 16px;
+}
+
+td:hover {
+    background-color: gray;
+}

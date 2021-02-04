@@ -1,0 +1,13 @@
+*.pyc
+*__pycache__/*
+run.sh
+build_push.sh
+flask_session*
+build_cdk.sh
+npm-debug.log
+runtests.sh
+node_modules
+__pycache__
+*.env.*
+docker-compose.test.yml
+dockerfile.test

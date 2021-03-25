@@ -111,7 +111,7 @@ Clicking into a Stack will show the AWS resources, and optionally a link to the 
 * ### How to Run Locally
     * Add AWS Region, ID, and Secret to the docker-compose.yml
     * Run ```docker-compose up```
-
+    * **NOTE:** Attempting to run on Windows systems may initially report an error in the wait-for-it.sh script when building the StackFinder client. This is due to a line ending conversion that occurs during the pull. To fix this, ensure that the line endings for wait-for-it.sh are set to **LF** rather than **CRLF**.
 
 * ### How to Deploy to AWS
     * create 2 scripts

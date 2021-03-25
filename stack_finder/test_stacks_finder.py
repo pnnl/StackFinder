@@ -49,7 +49,7 @@ def test_bucket_build_url():
             os.environ.get("STACK"), os.environ.get("BUCKET")
         ))
         assert req.status_code == 200
-        assert json.loads(req.data.decode())["bucket-url"] == "https://s3.console.aws.amazon.com/s3/buckets/n25-rpm8-incoming"
+        assert json.loads(req.data.decode())["bucket-url"] == "https://s3.console.aws.amazon.com/s3/buckets/{0}".format(os.environ.get("BUCKET"))
 
 def test_logs_build_url():
     """
@@ -61,7 +61,7 @@ def test_logs_build_url():
             os.environ.get("STACK"), os.environ.get("LOG_GROUP")
         ))
         assert req.status_code == 200
-        assert json.loads(req.data.decode())["log-url"] == "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logStream:group=/ecs/rpm8-n25-webservice-test"
+        assert json.loads(req.data.decode())["log-url"] == "https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logStream:group={0}".format(os.environ.get("LOG_GROUP"))
 
 def test_service_page_build_url():
     """
@@ -73,5 +73,5 @@ def test_service_page_build_url():
             os.environ.get("STACK"), os.environ.get("CLUSTER"), os.environ.get("WEBSERVICE_NAME")
         ))
         assert req.status_code == 200
-        assert json.loads(req.data.decode())["service-page-url"] == "https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2#/clusters/ardis-n25-dc/services/rpm8-n25-webservice-test/details" 
+        assert json.loads(req.data.decode())["service-page-url"] == "https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2#/clusters/{0}/services/{1}/details".format(os.environ.get("CLUSTER"), os.environ.get("WEBSERVICE_NAME"))
     

@@ -9,5 +9,4 @@ runtests.sh
 node_modules
 __pycache__
 *.env.*
-docker-compose.test.yml
-dockerfile.test
+**local**

@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+    client:
+        build:
+            #context: stackfinder-ui-create-react-app
+            context: stack-finder-client
+            dockerfile: local.dockerfile
+        working_dir: /usr/src/app
+        expose:
+            - 3000
+        user: root
+        environment:
+            NODE_ENV: development
+            API: api:8080
+        volumes:
+            #- ./stackfinder-ui-create-react-app:/usr/src/app
+            - ./stack-finder-client:/usr/src/app
+            - node_modules:/usr/src/app/node_modules/
+        ports:
+            - 3000:3000
+        depends_on:
+            - api
+        links:
+            - api
+        networks:
+            stackfinder:
+                ipv4_address: 172.19.0.3
+        #command: bash -c "bash ./wait-for-it.sh api:8080 -q -- npm i && npm start"
+        command: bash -c "bash ./wait-for-it.sh api:8080 -q -- npm i && npm run local"
+    api:
+        build:
+            context: stack_finder
+            dockerfile: Dockerfile
+        restart: always
+        expose: 
+            - 8080
+        volumes:
+            - ./stack_finder:/usr/src/app/stack_finder
+        ports:
+            - 127.0.0.1:8080:8080
+        environment:
+            CLIENT_ID: ""
+            CLIENT_SECRET: ""
+            TESTING: 1
+            AWS_DEFAULT_REGION: us-west-2
+            AWS_ACCESS_KEY_ID: ""
+            AWS_SECRET_ACCESS_KEY: ""
+        networks:
+            stackfinder:
+                ipv4_address: 172.19.0.2
+        command: bash -c "python3 test.py"
+volumes:
+    node_modules: {}
+
+networks:
+    stackfinder:
+        ipam: 
+            driver: default
+            config:
+                - subnet: 172.19.0.0/24

@@ -49,4 +49,4 @@ soupsieve==2.0.1
 toml==0.10.1
 urllib3==1.25.8
 webencodings==0.5.1
-Werkzeug==1.0.1
+Werkzeug==3.1.9
